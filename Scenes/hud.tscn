@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfvc503x3vt11"]
+
+[ext_resource type="FontFile" uid="uid://butuoegkv4xqd" path="res://Fonts/TerminessNerdFontMono-Bold.ttf" id="1_ntab6"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 220.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("1_ntab6")
+theme_override_font_sizes/font_size = 40
+text = "Distance: 0"
+uppercase = true
+
+[node name="StartLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -22.5
+offset_right = 210.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ntab6")
+theme_override_font_sizes/font_size = 40
+text = "PRESS ANY KEY TO PLAY"
+uppercase = true
+
+[node name="HighScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_ntab6")
+theme_override_font_sizes/font_size = 40
+text = "HIGH SCORE: 0"
+uppercase = true

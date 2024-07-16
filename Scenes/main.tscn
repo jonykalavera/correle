@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bko0qa55ok87e"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_a14hs"]
+[ext_resource type="PackedScene" uid="uid://dhwf1td8hb1nn" path="res://Scenes/parallax_background.tscn" id="1_ncbgn"]
+[ext_resource type="PackedScene" uid="uid://cfvc503x3vt11" path="res://Scenes/hud.tscn" id="2_7kcb4"]
+[ext_resource type="PackedScene" uid="uid://y3eq58uvbrjm" path="res://Scenes/ground.tscn" id="2_yituk"]
+[ext_resource type="PackedScene" uid="uid://csbcgapo6aocj" path="res://Scenes/character.tscn" id="3_qmw85"]
+[ext_resource type="AudioStream" uid="uid://1wnwn0s6xri1" path="res://Sounds/soundtrack.wav" id="5_ysg3p"]
+[ext_resource type="Script" path="res://Scripts/Soundtrack.gd" id="6_d06rw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_a14hs")
+
+[node name="HUD" parent="." instance=ExtResource("2_7kcb4")]
+
+[node name="Background" parent="." instance=ExtResource("1_ncbgn")]
+
+[node name="Ground" parent="." instance=ExtResource("2_yituk")]
+metadata/_edit_group_ = true
+
+[node name="Character" parent="." instance=ExtResource("3_qmw85")]
+position = Vector2(497, -1500)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" parent="Character" index="0"]
+animation = &"crouching"
+
+[node name="CrouchCol" parent="Character" index="2"]
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ysg3p")
+autoplay = true
+script = ExtResource("6_d06rw")
+
+[editable path="Background"]
+[editable path="Ground"]
+[editable path="Character"]
